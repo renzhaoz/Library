@@ -1,0 +1,6 @@
+{
+  "**/*.+(js|jsx|less|scss|ts|tsx)": [
+    "eslint",
+    "git add"
+  ]
+}

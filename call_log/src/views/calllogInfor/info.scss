@@ -1,0 +1,20 @@
+#info-view {
+  overflow: hidden;
+  height: calc(100% - var(--softkeybar-height));
+  width: 100%;
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - var(--header-height));
+  }
+
+  .call-duration-list {
+    overflow-y: scroll;
+  }
+
+  .list-item .secondary-info,
+  .list-item .additional-info {
+    line-height: 136%;
+  }
+}

@@ -1,0 +1,17 @@
+node_modules
+
+# Temporary disable lint for l10n, High risk
+js/utils/l10n/l10n.js
+js/utils/l10n/l10n_sw.js
+js/utils/blob/blobview.js
+# test case
+test
+
+# babel config file
+babel.config.js
+
+# karma config file
+karma.conf.js
+
+# eslint config
+.eslintrc.js

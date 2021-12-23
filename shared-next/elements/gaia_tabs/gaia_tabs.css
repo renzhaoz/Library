@@ -1,0 +1,47 @@
+
+/**
+ * Gaia Tabs
+ *
+ * Tabs allow users to navigate between
+ * multiple views within a single screen.
+ */
+
+/**
+ * [underline="child"]
+ * For this option we need a child element
+ * inside tabs, e.g:
+ * <gaia-tabs>
+ *   <button><span>Text</span></button>
+ * </gaia-tabs>
+ */
+
+ /**
+  * Cos the webcomponents v1 can not select
+  * for slot nested children, we just expose
+  * this global css here.
+  * ref: 
+  * https://stackoverflow.com/questions/61626493/slotted-css-selector-for-nested-children
+ */
+
+gaia-tabs[underline="child"] > .selected:after {
+  display: none;
+}
+
+gaia-tabs[underline="child"] > .selected > :after {
+  content: "";
+  position: absolute;
+  left: -0.5rem;
+  bottom: 0;
+  width: calc(100% + 1rem);
+  border-bottom: 0.3rem solid var(--highlight-color);
+}
+
+gaia-tabs[underline="child"] > .selected > *::after {
+  margin-bottom: 0.2rem;
+}
+
+gaia-tabs[underline="child"] > .selected > * {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}

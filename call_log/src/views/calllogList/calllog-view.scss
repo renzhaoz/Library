@@ -1,0 +1,223 @@
+#calllog-view {
+  width: 100%;
+  height: calc(100% - var(--softkeybar-height));
+  overflow: hidden;
+
+  &[data-is-edit-mode=true] .header::after {
+    content: '(' attr(data-checked-count) ')';
+  }
+
+  .body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(100% - var(--header-height) - 3rem);
+  }
+
+  .body {
+    .sticky {
+      position: absolute;
+
+      /* The sticky element is positioned at the beginning of the list. */
+      top: 0;
+
+      /* The width is not 100% so the scrollbar is visible. */
+      width: 100%;
+
+      /* The height needs to be kept in sync with the header height. */
+      height: 2.4rem;
+
+      /* Those style will affect the bagroundImage: -moz-element. */
+      background-repeat: no-repeat;
+    }
+
+    .sticky:not(.has-content) {
+      /* Set sticky header visible only when content is ready */
+      visibility: hidden;
+    }
+  }
+
+  .no-result {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: var(--header-height);
+    font-size: var(--font-p-pri);
+    * {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .no-result .hide {
+    display: none;
+  }
+
+  &[data-has-listed-items=true] .no-result {
+    visibility: hidden;
+  }
+
+  &[data-is-edit-mode='false'] .list-item .icon.box,
+  &[data-is-edit-mode='true'] .list-item .icon.thumb {
+    display: none;
+  }
+
+  .list .group-header {
+    background-color: var(--color-gs00);
+  }
+}
+
+:root {
+  --font-p-pri: 1.7rem;
+  --font-p-thi: 1.2rem;
+  --font-h1: 1.7rem;
+  --tab-size: 1.4rem;
+  --group-header-size: 1.4rem;
+}
+
+@media (prefers-text-size: large) {
+  :root {
+    --font-p-pri: 2.2rem;
+    --font-p-thi: 1.6rem;
+    --font-h1: 2.2rem;
+    --tab-size: 1.8rem;
+    --group-header-size: 1.8rem;
+  }
+}
+
+:focus {
+  outline: none;
+}
+
+gaia-tabs {
+  font-size: var(--tab-size) !important;
+}
+
+.h1 {
+  font-size: var(--font-h1);
+}
+
+.p-ul {
+  font-size: var(--font-p-pri);
+}
+
+.list {
+  height: 100%;
+  overflow-y: scroll;
+  .group-header {
+    margin: 0;
+    padding: 0 1rem;
+    font-size: var(--group-header-size);
+    height: 2.4rem;
+    background-color: var(--color-gs10);
+    color: var(--color-gs70);
+    line-height: 2.4rem;
+    font-weight: 600;
+    text-transform: none;
+  }
+}
+
+.list .list-item {
+  align-items: normal;
+  height: auto;
+  padding: 1rem;
+  -moz-padding-end: 0;
+
+  .content:not(:first-child) {
+    -moz-padding-end: 0;
+  }
+
+  .icon {
+    flex-shrink: 0;
+    font-size: 3.2rem;
+    line-height: 100%;
+    border-radius: 1.2rem;
+    background-size: cover;
+  }
+
+  [data-icon='contacts'] {
+    background-color: var(--color-lime);
+    color: var(--color-gs00);
+  }
+
+  [data-icon*='call-rtt-incoming'],
+  [data-icon*='call-rtt-outgoing'],
+  [data-icon*='call-incoming'],
+  [data-icon*='call-outgoing'] {
+    color: var(--color-lime);
+    margin: 0 0.5rem;
+  }
+
+  [data-icon*='call-missed'] {
+    color: var(--color-red);
+    margin: 0 0.5rem;
+  }
+
+  .primary-info {
+    line-height: 136%;
+    font-size: var(--font-p-pri);
+    color: var(--color-gs90);
+    margin-top: -0.4rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    :first-child {
+      flex-shrink: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .stir-checked {
+      flex-shrink: 0;
+      -moz-margin-start: 0.5rem;
+      background-image: url("./ic_valid_number.png");
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-top: 0.4rem;
+    }
+  }
+
+  .secondary-info,
+  .additional-info {
+    line-height: 1.5rem;
+    font-size: var(--font-p-thi);
+    color: var(--color-gs70);
+  }
+
+  .retry-count {
+    margin-left: 0.2rem;
+    flex-shrink: 0;
+  }
+
+  [data-icon='check-off'] {
+    color: var(--color-gs45);
+  }
+
+  [data-icon='check-on'] {
+    color: var(--color-lime);
+  }
+
+  &:focus {
+    .content *,
+    [data-icon^='check-'],
+    [data-icon*='call-'] {
+      color: var(--color-gs00);
+    }
+
+    [data-icon='contacts'] {
+      background-color: var(--color-gs00);
+      color: var(--color-lime);
+    }
+  }
+}
+
+.low-memory-device #calllog-view[data-is-edit-mode="false"] .list-item .content:not(:first-child) {
+  padding: 0;
+}
+
+#softkeyPanel.skbar {
+  --softkey-icon-size: 1.6rem !important;
+}

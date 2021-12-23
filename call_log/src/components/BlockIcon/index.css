@@ -1,0 +1,8 @@
+.blockImg {
+  display: flex;
+  align-items: center;
+}
+
+.blockImg .img {
+  margin: 0 0.5rem;
+}

@@ -1,0 +1,166 @@
+/* ----------------------------------
+ * Font
+ * ---------------------------------- */
+
+h1, .h1 {
+
+  /** Text for Header, Light
+   ---------------------------------------------------------*/
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+
+h2, .h2 {
+
+  /** Header of body texts, Semi-Bold
+   ---------------------------------------------------------*/
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+h3, .h3 {
+
+  /** Text for Tabs, Regular
+   ---------------------------------------------------------*/
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+h4, .h4 {
+
+  /** Text for Separators, Regular
+   ---------------------------------------------------------*/
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+h5, .h5 {
+
+  /** Text for Software keys, Regular
+   ---------------------------------------------------------*/
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.p-pri {
+
+  /** Primary information, Regular
+   ---------------------------------------------------------*/
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+
+.p-sec {
+
+  /** Secondary information, Regular
+   ---------------------------------------------------------*/
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.p-thi {
+
+  /** Thirdary information, Regular
+   ---------------------------------------------------------*/
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+p, .p,
+ul, .ul {
+
+  /** Body texts, Regular
+   ---------------------------------------------------------*/
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+
+.p-link {
+
+  /** Text for hyperlink, Bold, Underline
+   ---------------------------------------------------------*/
+  font-weight: 700;
+  font-size: 1.7rem;
+  text-decoration: underline;
+}
+
+.p-btn {
+
+  /** Text for Button, Regular, Capitalize
+   ---------------------------------------------------------*/
+  font-weight: 400;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+}
+
+/* ----------------------------------
+ * Font for large text mode
+ * ---------------------------------- */
+@media (prefers-text-size: large) {
+  h1,
+  .h1 {
+    /* Text for Header, Light for large text mode */
+    font-size: 2.2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  h2,
+  .h2 {
+    /* Header of body texts, Semi-Bold for large text mode */
+    font-size: 2.2rem;
+  }
+
+
+  h3,
+  .h3 {
+    /* Text for Tabs, Regular for large text mode */
+    font-size: 1.8rem;
+  }
+
+  h4,
+  .h4 {
+    /* Text for Separators, Regular for large text mode */
+    font-size: 1.8rem;
+  }
+
+  h5,
+  .h5 {
+    /* Text for Software keys, Regular for large text mode */
+    font-size: 1.8rem;
+  }
+
+  .p-pri {
+    /* Primary information, Regular for large text mode */
+    font-size: 2.2rem;
+  }
+
+  .p-sec {
+    /* Secondary information, Regular for large text mode */
+    font-size: 1.8rem;
+  }
+
+  .p-thi {
+    /* Thirdary information, Regular for large text mode */
+    font-size: 1.6rem;
+  }
+
+  p,
+  .p,
+  ul,
+  .ul {
+    /* Body texts, Regular for large text mode */
+    font-size: 2.2rem;
+  }
+
+  .p-link {
+    /* Text for hyperlink, Bold, Underline for large text mode */
+    font-size: 2.2rem;
+  }
+
+  .p-btn {
+    /* Text for Button, Regular for large text mode */
+    font-size: 2.2rem;
+  }
+}
